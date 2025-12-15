@@ -1,0 +1,75 @@
+random.seed = 1
+count.of.agents = 14
+board.size.x = 80
+board.size.y = 120
+proc.per.x = 1
+proc.per.y = 1
+grid.buffer = 0
+
+start.year = 800
+end.year = 1350
+max.store.year = 2
+max.storage = 1600
+household.need = 800
+min.fission.age = 18
+max.fission.age = 35
+min.death.age = 30
+max.death.age = 37
+max.distance = 1000
+initial.min.corn = 2000
+initial.max.corn = 2400
+annual.variance = 0.38342
+spatial.variance = 0.10000
+fertility.prop = 0.12666
+harvest.adj = 0.54484
+new.household.ini.maize = 0.33000
+
+#迁移记忆窗口 L（年）
+influence.windowL = 2
+
+#时间衰减系数 ρ（衰减迁移影响）
+influence.rho = 0.05
+
+#缺口压力权重（D_i 越大越想迁走）
+influence.kd = 0.5
+
+#缓冲/借到粮的保护权重（B_i 越大越不想迁走）
+influence.kb = 0.5
+
+#定居依恋的保护权重（A_total,i 越大越不想迁走）
+influence.ka = 0.5
+
+#稳定性的保护权重（C_stability,i 越大越不想迁走）
+influence.kc = 0.5
+
+#社会暴露度权重（E_i 越大越想跟随迁走）
+influence.ke = 0.5
+
+#跟随迁移阈值。当 p_i > probBase 就跟随迁出（不再额外抽随机数）。
+influence.probability.base = 0.8
+
+#每年最多允许“跟随迁出”的比例 cap
+influence.cap.per.year = 0.2
+
+#Feature 2（Settlement attachment / 定居依恋）里的时间衰减/增长速度参数，控制一个 household 在同一地点住得越久，“时间带来的依恋” A_time(t) 增长得有多快。
+influence.settle.lambda = 0.23  
+
+#社交嵌入权重，∑S_ij的系数
+influence.settle.alpha = 0.5 
+
+#Laplace平滑参数a
+influence.settle.a = 1.0     
+
+# Laplace平滑参数b
+influence.settle.b = 1.0     
+
+#亲缘权重k_s，关系强度S_ij = (1-k_s)*rep_j + k_s*K_ij
+social.ks = 0.5 
+
+#声誉增长系数（帮助他人时）
+social.k_up = 0.5   
+
+#声誉惩罚系数（拒绝帮助时），k_down > k_up
+social.k_down = 0.1   
+
+result.file = NumberOfHousehold.csv
